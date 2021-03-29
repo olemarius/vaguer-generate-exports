@@ -1,11 +1,11 @@
 {
-  "name": "vaguer-generate-exports",
-  "version": "0.0.0",
+  "name": "vite-lib-test-2",
+  "version": "0.0.4",
   "files": [
     "dist"
   ],
-  "main": "./dist/vaguer.umd.js",
-  "module": "./dist/vaguer.es.js",
+  "main": "./dist/vite-lib-test-2.umd.js",
+  "module": "./dist/vite-lib-test-2.es.js",
   "types": "./dist/main.d.ts",
   "scripts": {
     "dev": "vite",
@@ -13,8 +13,8 @@
   },
   "exports": {
     ".": {
-      "import": "./dist/vaguer.es.js",
-      "require": "./dist/vaguer.umd.js"
+      "import": "./dist/vite-lib-test-2.es.js",
+      "require": "./dist/vite-lib-test-2.umd.js"
     },
     "./style.css": {
       "import": "./dist/style.css",

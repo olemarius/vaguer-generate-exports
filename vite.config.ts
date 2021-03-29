@@ -22,17 +22,10 @@ const config = defineConfig({
         },
       },
     },
+    emptyOutDir: true
   },
   plugins: [
     vue(),
-    GenerateExports({
-      patterns: [
-        {
-          matchTokens: ['// Start_Exports', '// End_Exports'],
-          path: 'src/components/**/*.vue',
-        },
-      ],
-    }),
     WindiCSS({
       preflight: false,
     }),

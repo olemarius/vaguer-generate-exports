@@ -8,7 +8,8 @@ const entryFile = path.resolve(entry, 'main.ts')
 const components = path.resolve('src', 'components')
 
 async function getComponents(path) {
-  const files = await fg(`${path}/**/*.(vue)`, {
+  const normalizedPath = path.replace(/\\/gi, '/')
+  const files = await fg(`${normalizedPath}/**/*.vue`, {
     cwd: rootDir,
     ignore: [
       '_*',
@@ -28,7 +29,7 @@ async function autoExport() {
 
   const exports = (await getComponents(components)).map((p) => {
     const name = path.basename(p).split('.')[0]
-    const relativePath = path.relative(entry, p)
+    const relativePath = path.relative(entry, p).replace(/\\/gi, '/')
     return `export { default as ${name} } from './${relativePath}'`
   }).join('\n')
 
